@@ -4,42 +4,28 @@ import { getArticlesById } from './api';
 
 
 export default function ArticleList({articles, setArticles}){
-
-    const handleClick = (e, article_id) => {
-        getArticlesById(article_id)
-        .then((data) => {
-        setArticles(data)
-        })
-    }
-
       return (
         <section>
             <ul className="articleList">
             {articles.map((article, index) => (
                     <Stack gap={3} key={['stack', index]}>
                     <div className="p-2" key={['div', index]}>
-                    {article.body ? (
-                        <>
-                        <h3>{article.title}</h3> 
-                        <p>{article.body}</p> 
-                        </> 
-                        ) : ( <Link to={`/articles/${article.article_id}`} key={['link', index]}  onClick={(e) => handleClick(e, article.article_id)}> 
+                    <Link to={`/articles/${article.article_id}`} key={['link', index]}> 
                     {article.title} 
                     </Link>
-                    )}
-                    <li key={[article.author, index]}>
+                    <li>
                         author: {article.author}
                     </li>
-                    <li key={[article.created_at, index]}>
-                        created_at: {article.created_at}
+                    <li>
+                        created_at: {new Date(article.created_at).toLocaleString()}
                     </li>
-                    <li key={[article.topic, index]}>
+                    <li>
                         topic: {article.topic}
                     </li>
-                    <li key={[article.votes, index]}>
+                    <li>
                         votes: {article.votes}
                     </li>
-                    <img key={['img', index]} src={article.article_img_url} alt={`${article.title} picture`}></img>
+                    <img src={article.article_img_url} alt={`${article.title} picture`}></img>
                     </div>
                     </Stack>
             ))}
@@ -49,3 +35,4 @@ export default function ArticleList({articles, setArticles}){
 
 
 }
+

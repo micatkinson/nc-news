@@ -1,9 +1,9 @@
-import { useContext } from "react"
 import { Link } from "react-router-dom"
 
 export default function Nav(){
     return (
-        <nav>
+        <nav className='navBar'>
+            <h1 className="logo"> /\ NC News</h1>
             <ul>
                 <li> 
                     <Link to="/">Home </Link>
@@ -18,9 +18,6 @@ export default function Nav(){
                     <Link to="/user">User </Link>
                 </li>
             </ul>
-            <header>
-                <h1> Northcoders</h1>
-            </header>
          </nav>
     )
 }
