@@ -1,10 +1,10 @@
 import Stack from 'react-bootstrap/Stack';
 
-export default function CommentList({comments}){
-    
+export default function CommentList({comments, article}){
+    const selected = article[0]
     return (
-    <section>
-        <h2>Comments</h2>
+    <section className='comments'>
+        <h2>{selected.comment_count} Comments</h2>
         <ul>
             {comments.map((comment, index) => (
                 <Stack gap={3} key={[comment.id, index]} className='commentStack'>
@@ -20,3 +20,4 @@ export default function CommentList({comments}){
     </section>
     )
 }
+

@@ -5,6 +5,7 @@ export default function ArticleVote({voteCount}){
     return (
         <>
         <h3> Vote for Article</h3>
+        <p>{voteCount}</p>
         <button> Upvote 👍</button>
         <button> Downvote 👎 </button>
         </>

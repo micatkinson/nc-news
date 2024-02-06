@@ -37,7 +37,7 @@ export default function SelectArticle({article}){
     return (
         <>
         <ArticleCard article={selectedArticle}/>
-        <CommentList comments={comments}/>
+        <CommentList comments={comments} article={selectedArticle}/>
         </>
     )
 

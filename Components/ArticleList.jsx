@@ -9,23 +9,25 @@ export default function ArticleList({articles, setArticles}){
             <ul className="articleList">
             {articles.map((article, index) => (
                     <Stack gap={3} key={['stack', index]}>
-                    <div className="p-2" key={['div', index]}>
+                    <div className="articleItem" key={['div', index]}>
                     <Link to={`/articles/${article.article_id}`} key={['link', index]}> 
                     {article.title} 
                     </Link>
+                    <li className='topic'>
+                       {article.topic}
+                    </li>
+                    <li>
+                    <img src={article.article_img_url} alt={`${article.title} picture`}></img>
+                    </li>
                     <li>
                         author: {article.author}
                     </li>
                     <li>
-                        created_at: {new Date(article.created_at).toLocaleString()}
-                    </li>
-                    <li>
-                        topic: {article.topic}
+                        {new Date(article.created_at).toLocaleDateString()} {new Date(article.created_at).toLocaleTimeString()}
                     </li>
                     <li>
                         votes: {article.votes}
                     </li>
-                    <img src={article.article_img_url} alt={`${article.title} picture`}></img>
                     </div>
                     </Stack>
             ))}
@@ -35,4 +37,3 @@ export default function ArticleList({articles, setArticles}){
 
 
 }
-
