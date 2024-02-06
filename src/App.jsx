@@ -20,7 +20,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home articles={articles} setArticles={setArticles}/>} />
-          <Route path="/articles/:article_id" element={<SelectArticle articles={articles} setArticles={setArticles} />} />
+          <Route path="/articles/:article_id" element={<SelectArticle articles={articles}/>} />
         </Routes>
       </>
   )

@@ -4,42 +4,30 @@ import { getArticlesById } from './api';
 
 
 export default function ArticleList({articles, setArticles}){
-
-    const handleClick = (e, article_id) => {
-        getArticlesById(article_id)
-        .then((data) => {
-        setArticles(data)
-        })
-    }
-
       return (
         <section>
             <ul className="articleList">
             {articles.map((article, index) => (
                     <Stack gap={3} key={['stack', index]}>
-                    <div className="p-2" key={['div', index]}>
-                    {article.body ? (
-                        <>
-                        <h3>{article.title}</h3> 
-                        <p>{article.body}</p> 
-                        </> 
-                        ) : ( <Link to={`/articles/${article.article_id}`} key={['link', index]}  onClick={(e) => handleClick(e, article.article_id)}> 
+                    <div className="articleItem" key={['div', index]}>
+                    <Link to={`/articles/${article.article_id}`} key={['link', index]}> 
                     {article.title} 
                     </Link>
-                    )}
-                    <li key={[article.author, index]}>
+                    <li className='topic'>
+                       {article.topic}
+                    </li>
+                    <li>
+                    <img src={article.article_img_url} alt={`${article.title} picture`}></img>
+                    </li>
+                    <li>
                         author: {article.author}
                     </li>
-                    <li key={[article.created_at, index]}>
-                        created_at: {article.created_at}
+                    <li>
+                        {new Date(article.created_at).toLocaleDateString()} {new Date(article.created_at).toLocaleTimeString()}
                     </li>
-                    <li key={[article.topic, index]}>
-                        topic: {article.topic}
-                    </li>
-                    <li key={[article.votes, index]}>
+                    <li>
                         votes: {article.votes}
                     </li>
-                    <img key={['img', index]} src={article.article_img_url} alt={`${article.title} picture`}></img>
                     </div>
                     </Stack>
             ))}
