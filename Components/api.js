@@ -16,7 +16,7 @@ export const getArticlesById = (article_id) => {
 
 export const getComments = (article_id) => {
     return ncNews.get(`/articles/${article_id}/comments`).then(({ data }) => {
-        console.log(data.comments)
+        return data.comments;
     })
 
 }
