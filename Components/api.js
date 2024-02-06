@@ -8,3 +8,16 @@ export const getArticles = () => {
     })
 }
 
+export const getArticlesById = (article_id) => {
+    return ncNews.get(`/articles/${article_id}`).then(({ data }) => {
+        return [data.article];
+    })
+}
+
+export const getComments = (article_id) => {
+    return ncNews.get(`/articles/${article_id}/comments`).then(({ data }) => {
+        console.log(data.comments)
+    })
+
+}
+
