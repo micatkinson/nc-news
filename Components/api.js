@@ -1,5 +1,4 @@
 import axios from "axios";
-import ArticleList from "./ArticleList";
 
 const ncNews = axios.create({ baseURL: 'https://first-web-service-wn9h.onrender.com/api' })
 
