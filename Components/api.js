@@ -35,7 +35,7 @@ export const postArticleComment = (article_id, body, username) => {
         body
     }
     return ncNews.post(`/articles/${article_id}/comments`, data).then(({ data }) => {
-        return data.comments
+        return data.addedComment
     })
 }
 

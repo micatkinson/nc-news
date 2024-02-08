@@ -20,7 +20,7 @@ export default function Nav(){
                      <Link to="/about">About </Link>
                 </li>
                 <li> 
-                    <Link to="/profile">Current user: {loggedInUser.username} </Link>
+                    <Link to="/profile">User: {loggedInUser.username} </Link>
                     <img src={loggedInUser.avatar_url}
                     alt={`avatar for user ${loggedInUser.username}`}
                     />
