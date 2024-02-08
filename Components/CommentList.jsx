@@ -44,13 +44,13 @@ export default function CommentList({article}){
     <section className='comments'>
         <h2>{commentCount} Comments</h2>
         <CommentForm id={id} setCommentCount={setCommentCount} setComments={setComments} addComment={addComment} removeComment={removeComment}/>
-        {/* <ShowButton title='comments'> */}
+        <ShowButton title='comments'>
         <ul>
             {comments.map((comment, index) => (
-                <CommentCard key={[comment.id, index]} comment={comment} index={index} className='commentStack'/>
+                <CommentCard key={[comment.id, index]} comment={comment} index={index} className='commentStack' removeComment={removeComment} setCommentCount={setCommentCount}/>
             ))}
         </ul>
-        {/* </ShowButton> */}
+        </ShowButton>
     </section>
     )
 }

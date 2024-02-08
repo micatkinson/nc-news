@@ -45,3 +45,9 @@ export const getUsers = () => {
     })
 }
 
+export const deleteComment = (comment_id) => {
+    return ncNews.delete(`/comments/${comment_id}`).then(({ response }) => {
+        console.log(response)
+    })
+}
+

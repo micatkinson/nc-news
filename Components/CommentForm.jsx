@@ -17,10 +17,11 @@ export default function CommentForm({id, setCommentCount, addComment, removeComm
 
 
         const handleSubmit = (event) => {
-          setIsLoading(true)
           event.preventDefault();
+          setIsLoading(true)
           if (postComment === ""){
             setCommentError(true)
+            setIsLoading(false)
           } else {
             setSubmitting(true)
             setCommentCount((commentCount) => commentCount + 1)

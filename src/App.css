@@ -211,3 +211,10 @@ img{
   padding-bottom: 20px
 }
 
+.deleteButton{
+  background-color: yellow;
+}
+
+.deleteButton:hover{background-color:orange;}
+
+.deleteButton:focus{background-color:red;}
