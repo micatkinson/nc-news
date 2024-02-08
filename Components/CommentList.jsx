@@ -1,22 +1,34 @@
-import Stack from 'react-bootstrap/Stack';
+import CommentForm from './CommentForm';
+import ShowButton from './ShowCommentsButton';
+import { useEffect, useState } from 'react';
+import CommentCard from './CommentCard';
 
 export default function CommentList({comments, article}){
     const selected = article[0]
+    const id = selected.article_id
+    const count = Number(selected.comment_count)
+
+    const [commentCount, setCommentCount] = useState(count)
+
+    const [loadedComments, setLoadedComments] = useState(comments)
+
+    useEffect(() => {
+        setLoadedComments(comments)
+    }, [comments])
+
+    console.log(loadedComments)
+
     return (
     <section className='comments'>
-        <h2>{selected.comment_count} Comments</h2>
+        <h2>{commentCount} Comments</h2>
+        <CommentForm id={id} setCommentCount={setCommentCount} setLoadedComments={setLoadedComments}/>
+        <ShowButton title='comments'>
         <ul>
-            {comments.map((comment, index) => (
-                <Stack gap={3} key={[comment.id, index]} className='commentStack'>
-                    <div key={[comment.id, 'div']}className="commentItem">
-                        <h4>{comment.author}</h4>
-                        <p>{comment.body}</p>
-                        <li>{new Date(comment.created_at).toLocaleString()}</li>
-                        <li>Votes: {comment.votes}</li>
-                    </div>
-                </Stack>
+            {loadedComments.map((comment, index) => (
+                <CommentCard key={[comment.id, index]} comment={comment} index={index} className='commentStack'/>
             ))}
         </ul>
+        </ShowButton>
     </section>
     )
 }

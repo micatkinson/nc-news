@@ -28,3 +28,20 @@ export const patchArticleVotes = (article_id, newVote) => {
     })
 }
 
+export const postArticleComment = (article_id, body, username) => {
+
+    const data = {
+        username,
+        body
+    }
+    return ncNews.post(`/articles/${article_id}/comments`, data).then(({ data }) => {
+        return data.comments
+    })
+}
+
+export const getUsers = () => {
+    return ncNews.get('/users').then(({ data }) => {
+        return data.users
+    })
+}
+

@@ -5,8 +5,17 @@ import './App.css'
 import SelectArticle from '../Components/SelectArticle'
 import { useState, useEffect } from "react"
 import { getArticles } from "../Components/api"
+import UserContext from '../Components/UserContext';
+import Profile from '../Components/Profile';
+import ChangeUser from '../Components/ChangeUser' 
 
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({
+    username: 'tickle122',
+    name: "Tom Tickle",
+    avatar_url: "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953"
+  })
 
   const [articles, setArticles] = useState([])
   useEffect(() =>  {
@@ -16,13 +25,17 @@ function App() {
 }, [])
 
   return (
-    <>
+    <>  
+      <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
         <Nav />
         <Routes>
           <Route path="/" element={<Home articles={articles} setArticles={setArticles}/>} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/change-user" element={<ChangeUser />} /> 
           <Route path="/articles/:article_id" element={<SelectArticle articles={articles}/>} />
         </Routes>
-      </>
+      </UserContext.Provider>
+    </>
   )
 
 }
