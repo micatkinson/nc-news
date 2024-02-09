@@ -11,22 +11,19 @@ export default function Topic(){
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    console.log(filteredTopic)
-
-    console.log(topic)
-
     useEffect(() => {
         getTopic(topic).then((topicData) => {
             setFilteredTopic(topicData)
             setIsLoading(false)
     }).catch((error) => {
         setError(error)
+        setIsLoading(false)
     })
 }, [topic])
 
 
         if (isLoading) return <Loading />
-        if (error !== null) return <Error error={error}/>     
+        if (error) return <Error error={error}/>     
 
         return(
             <main className='homeMain'>

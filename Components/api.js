@@ -2,8 +2,8 @@ import axios from "axios";
 
 const ncNews = axios.create({ baseURL: 'https://first-web-service-wn9h.onrender.com/api' })
 
-export const getArticles = () => {
-    return ncNews.get("/articles").then(({ data }) => {
+export const getArticles = (selectedValue = 'created_at', order = 'desc') => {
+    return ncNews.get(`/articles?sort_by=${selectedValue}&order=${order}`).then(({ data }) => {
         return data.articles;
     })
 }
@@ -47,7 +47,6 @@ export const getUsers = () => {
 
 export const deleteComment = (comment_id) => {
     return ncNews.delete(`/comments/${comment_id}`).then(({ response }) => {
-        console.log(response)
     })
 }
 

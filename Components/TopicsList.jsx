@@ -15,11 +15,12 @@ export default function TopicList(){
             setIsLoading(false)
         }).catch((error) => {
             setError(error)
+            setIsLoading(false)
         })
     }, [topics])
 
         if (isLoading) return <Loading />
-        if (error !== null) return <Error error={error}/>       
+        if (error) return <Error error={error}/>       
 
         return(
             <main className='topicMain'>
@@ -28,7 +29,7 @@ export default function TopicList(){
                     {topics.map((topic) => {
                         return(
                         <Link to={`/topic/${topic.slug}`} key={topic.slug} className='topicLink'> 
-                        <section class='topicItem'>
+                        <section className='topicItem'>
                         <li>  
                             <h2>{topic.slug}</h2>
                         </li>  
