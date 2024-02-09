@@ -23,9 +23,7 @@ export default function CommentList({article}){
             setIsLoading(false)
     }).catch((error) => {
         setIsLoading(false)
-        setError({
-            status: 408,
-            statusText: 'Unable to load comments, please refresh'})
+        setError(error)
     });
 }, [comments])
 

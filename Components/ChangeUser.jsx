@@ -19,11 +19,9 @@ export default function ChangeUser(){
         getUsers().then((userData) => {
             setUsers(userData)
             setIsLoading(false)
-        }).catch((err) => {
-            setError({
-                status: 408,
-                statusText: 'Unable to load users, please retry'})
-                setIsLoading(false)
+        }).catch((error) => {
+            setError(error)
+            setIsLoading(false)
             })
     }, [])
 
@@ -42,7 +40,7 @@ export default function ChangeUser(){
                                     alt={`avatar for user ${user.username}`}
                                     />
                                     <h3>{user.name}</h3>
-                                    <button onClick={(e) => {
+                                    <button className='userButton' onClick={(e) => {
                                         e.preventDefault()
                                         setLoggedInUser(user)
                                         navigate(-1);

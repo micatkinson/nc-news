@@ -18,35 +18,34 @@ export default function CommentForm({id, setCommentCount, addComment, removeComm
 
         const handleSubmit = (event) => {
           event.preventDefault();
+          setSubmitting(true)
           setIsLoading(true)
           if (postComment === ""){
             setCommentError(true)
+            setSubmitting(false)
             setIsLoading(false)
           } else {
-            setSubmitting(true)
             setCommentCount((commentCount) => commentCount + 1)
             const newComment = {
             article_id: id,
             author: username,
             body: postComment,
-            comment_id: 10000,
+            comment_id: -1,
             created_at: new Date().toISOString(),
             votes: 0
             }
-            addComment(newComment);
             setCommentError(false)
             setPostComment("") 
             postArticleComment(id, postComment, username)
             .then((response) => {
+            addComment(newComment);
             newComment.comment_id = response.comment_id;
             setSubmitting(false)
             setIsLoading(false)
-            }).catch((err) => {
+            }).catch((error) => {
               setCommentCount((commentCount) => commentCount - 1)
               removeComment(newComment.comment_id)
-              setError({
-                    status: 408,
-                    statusText: 'Unable to add comment, please retry'})
+              setError(error)
                     setSubmitting(false)
                     setIsLoading(false)
                 })

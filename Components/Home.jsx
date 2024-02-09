@@ -16,9 +16,7 @@ export default function Home({articles, setArticles}){
             setArticles(articleData)
             setIsLoading(false)
         }).catch((error) => {
-            setError({
-                status: 408,
-                statusText: 'Unable to load articles, please refresh'})
+            setError(error)
             setIsLoading(false)
         })
     });
