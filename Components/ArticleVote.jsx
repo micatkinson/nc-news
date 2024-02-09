@@ -12,10 +12,9 @@ export default function ArticleVote({votes, setVotes, id}){
         setVotes((votes) => votes + 1)
         setHasVoted(true)
         patchArticleVotes(id, 1)
-        .catch((err) => {
+        .catch((error) => {
             setVotes((votes) => votes - 1)
-            setError({ status: 408,
-                statusText: 'Unable to add vote, please retry'})
+            setError(error)
         })
     }
     }
@@ -26,9 +25,7 @@ export default function ArticleVote({votes, setVotes, id}){
         setHasVoted(true)
         patchArticleVotes(id, -1)
         .catch((err) => {
-            setVotes((votes) => votes + 1)
-            setError({ status: 408,
-                statusText: 'Unable to down vote, please retry'})
+            setVotes(true)
         })
     }
     }

@@ -14,35 +14,49 @@ body, html {
   background-color: rgb(240, 233, 233);
   border-bottom: solid rgb(154, 141, 142);;
   border-top: solid rgb(154, 141, 142);
+  justify-content: space-between;
 }
 
 .logo{
   color: red;
-  font-size: 30px;
-  padding-left: 20px;
+  font-size: 24px;
+  padding-left: 10px;
   flex-shrink: 0;
 }
 
- ul{
+ .navBar ul{
   list-style-type: none;
   text-align: center;
   width: 90%;
   max-width: 100%;
+  justify-content: space-between;
+  display: flex
 }
 
 .navBar li{
  display: inline-block;
- font-size: 20px;
- padding-left: 15px;
- padding-right:30px;
+ font-size: 16px;
  flex-shrink: 0;
+ flex: 1;
+}
 
+@media screen and (max-width: 600px){
+  .navBar li {
+    display: inline-block;
+    font-size: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .logo {
+    font-size: 15px
+  }
 }
 
 .navBar img{
   max-height: 35px;
   max-width: 40px;
-  padding-left: 30px;
+  padding-left: 10px;
+  
 }
 
 img{
@@ -75,7 +89,7 @@ img{
 
 .articleItem{
   flex: 1;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid rgb(186, 207, 207);
   margin:1rem;
   text-align: center;
@@ -135,10 +149,32 @@ img{
   text-align: center;  
   border: 5px solid black;
   flex-direction: column;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   border-radius: 50px;
-
 }
+
+@media screen and (max-width: 600px){
+  .individualArticle{
+    width: 90%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    text-align: center;  
+    border: 5px solid black;
+    flex-direction: column;
+    font-size: 0.7rem;
+    border-radius: 50px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .individualArticle img{
+    width: 250px;
+    height: 250px
+  }
+}
+
+
 
 .individualArticle li{
   list-style-type: none;
@@ -213,6 +249,25 @@ img{
   padding-bottom: 20px
 }
 
+@media screen and (max-width: 600px){
+  .profileContainer{
+    max-width: 100%;
+    padding-top: 30px;
+    font-size: medium;
+  }
+  .profile{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .profile img{
+    max-width: 160px;
+    max-height:130px;
+  }
+}
+
+
 .deleteButton{
   width: 5em;
   margin-top:10px;
@@ -220,7 +275,7 @@ img{
   padding-bottom: 5px;
   border: dotted black 1.5px;
   flex-shrink: 0;
-  
+  background-color: rgb(221, 221, 125);
 }
 
 .userButton{
@@ -230,3 +285,51 @@ img{
 .deleteButton:hover{background-color:orange;}
 
 .deleteButton:focus{background-color:red;}
+
+.topicMain{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+
+.topicLink{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.topicItem{
+  list-style-type: none;
+  flex: 1;
+  border: 1px solid rgb(186, 207, 207);
+  margin:10rem;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 70%;
+  flex-shrink: inherit;
+}
+
+@media screen and (max-width: 600px){
+  .topicMain {
+    max-width: 50%;
+  }
+  .topicItem{
+    max-width: 90%;
+  }
+  .topicItem li{
+    padding-top: 2rem;
+    padding-bottom: 2rem
+  }
+}
+
+
+.topicItem li{  
+   padding-top: 5rem;
+   padding-bottom: 5rem;
+}
+
+.topicItem:hover{
+  box-shadow: 10px 10px 5px rgb(155, 179, 179);
+}

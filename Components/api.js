@@ -51,3 +51,15 @@ export const deleteComment = (comment_id) => {
     })
 }
 
+export const getTopics = () => {
+    return ncNews.get('/topics').then(({ data }) => {
+        return data.topics
+    })
+}
+
+export const getTopic = (topic) => {
+    return ncNews.get(`/articles?topic=${topic}`).then(({ data }) => {
+        return data.articles
+    })
+}
+

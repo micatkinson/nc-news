@@ -8,6 +8,8 @@ import { getArticles } from "../Components/api"
 import UserContext from '../Components/UserContext';
 import Profile from '../Components/Profile';
 import ChangeUser from '../Components/ChangeUser' 
+import TopicList from '../Components/TopicsList';
+import Topic from '../Components/Topic';
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/change-user" element={<ChangeUser />} /> 
           <Route path="/articles/:article_id" element={<SelectArticle articles={articles}/>} />
+          <Route path="/topics" element={<TopicList />}/>
+          <Route path="/topic/:topic" element={<Topic />}/>
         </Routes>
       </UserContext.Provider>
     </>

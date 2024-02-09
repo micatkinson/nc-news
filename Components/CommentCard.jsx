@@ -18,11 +18,9 @@ export default function CommentCard({comment, index, setCommentCount}){
             .then(() =>{
                 setCommentCount((commentCount) => commentCount - 1)
                 setIsLoading(false)
-            }).catch((err) => {
+            }).catch((error) => {
                 setCommentCount((commentCount) => commentCount + 1)
-                setError({
-                    status: 408,
-                    statusText: 'Unable to delete comment, please retry'})
+                setError(error)
                 setIsLoading(false)
             })
         }
