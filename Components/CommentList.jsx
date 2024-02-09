@@ -38,7 +38,7 @@ export default function CommentList({article}){
 
 
     if (isLoading) return <Loading />
-    if (error !== null) return <Error error={error}/>
+    if (error) return <Error error={error}/>
 
     return (
     <section className='comments'>

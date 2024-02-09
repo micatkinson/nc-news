@@ -15,11 +15,12 @@ export default function TopicList(){
             setIsLoading(false)
         }).catch((error) => {
             setError(error)
+            setIsLoading(false)
         })
     }, [topics])
 
         if (isLoading) return <Loading />
-        if (error !== null) return <Error error={error}/>       
+        if (error) return <Error error={error}/>       
 
         return(
             <main className='topicMain'>
