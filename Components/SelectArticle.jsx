@@ -20,7 +20,9 @@ export default function SelectArticle({article}){
             setSelectedArticle(articleData);
             setIsLoading(false)
             }).catch((error) => {
-                setError(error)
+                setError({
+                    status: 408,
+                    statusText: 'Unable to load article, please refresh'})
                 setIsLoading(false)
         });
   }, [article_id])

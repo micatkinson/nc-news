@@ -26,7 +26,8 @@ body, html {
  ul{
   list-style-type: none;
   text-align: center;
-  width: 100%;
+  width: 90%;
+  max-width: 100%;
 }
 
 .navBar li{
@@ -197,17 +198,35 @@ img{
   text-align: center;
   margin-top: 70px;
   margin-bottom: 70px;
-  background-color: rgb(241, 202, 202);
+  background-color: rgb(239, 231, 231);
 }
 
 .profile img{
   max-height: 160px;
   max-width: 200px;
   border-top: 1px rgb(205, 143, 143) solid;
-  border-bottom: 1px rgb(205, 143, 143) solid; ;
+  border-bottom: 1px rgb(205, 143, 143) solid;
+  background-color: white ;
   padding-left: 100px;
   padding-right:100px;
   padding-top: 20px;
   padding-bottom: 20px
 }
 
+.deleteButton{
+  width: 5em;
+  margin-top:10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: dotted black 1.5px;
+  flex-shrink: 0;
+  
+}
+
+.userButton{
+  background-color: red;
+}
+
+.deleteButton:hover{background-color:orange;}
+
+.deleteButton:focus{background-color:red;}
