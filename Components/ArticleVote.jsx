@@ -33,7 +33,7 @@ export default function ArticleVote({votes, setVotes, id}){
     }
     }
 
-    if(error) return <Error message={error}/>
+    if(error) return <Error error={error}/>
 
     return (
         <>

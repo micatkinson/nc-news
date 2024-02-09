@@ -54,7 +54,7 @@ export default function CommentForm({id, setCommentCount, addComment, removeComm
               }
 
         if (isLoading) return <Loading />
-        if(error) return <Error message={error}/>
+        if(error) return <Error error={error}/>
                    
         return (
           <div className="commentForm">

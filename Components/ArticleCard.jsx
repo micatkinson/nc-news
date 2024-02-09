@@ -10,14 +10,10 @@ export default function ArticleCard({article}){
             return(
             <div className='individualArticle'>
                 <h1>{selected.title}</h1>
+                Category: {selected.topic}<br/>
+                Author: {selected.author}  ||    {new Date(selected.created_at).toLocaleDateString()} || {new Date(selected.created_at).toLocaleTimeString()}
                     <p className="articleBody">{selected.body}
-                        <br/> 
-                        <br/>
-                        Author: {selected.author}
-                        <br/>
-                    {new Date(selected.created_at).toLocaleDateString()} {new Date(selected.created_at).toLocaleTimeString()}
-                        <br/>
-                        Category: {selected.topic}
+                    
                     </p>
                 <ul>
                     <li>
