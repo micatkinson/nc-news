@@ -29,7 +29,7 @@ export default function TopicList(){
                     {topics.map((topic) => {
                         return(
                         <Link to={`/topic/${topic.slug}`} key={topic.slug} className='topicLink'> 
-                        <section class='topicItem'>
+                        <section className='topicItem'>
                         <li>  
                             <h2>{topic.slug}</h2>
                         </li>  

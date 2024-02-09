@@ -16,7 +16,6 @@ export default function Home({articles, setArticles}){
 
     const [searchParams, setSearchParams] = useSearchParams()
 
-    console.log(selectedValue)
 
     const setSortOrder = (selectedValue) => {
         const newParams = new URLSearchParams(searchParams)
