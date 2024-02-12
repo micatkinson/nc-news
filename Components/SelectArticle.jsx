@@ -26,7 +26,7 @@ export default function SelectArticle({article}){
   }, [article_id])
 
   if (isLoading) return <Loading />
-  if (error !== null) return <Error error={error}/>
+  if (error) return <Error error={error}/>
 
     return (
         <>
