@@ -31,6 +31,7 @@ function App() {
       <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
         <Nav />
         <Routes>
+          <Route path="*" element={<Error />} />
           <Route path="/" element={<Home articles={articles} setArticles={setArticles}/>} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/change-user" element={<ChangeUser />} /> 
