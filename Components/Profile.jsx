@@ -16,7 +16,7 @@ export default function Profile(){
                 />
                  <h3>{loggedInUser.name}</h3>
              </nav>
-             <Link to="/change-user"> Change User </Link>
+             <Link to="/change-user" className='profile-link'> Change User </Link>
         </main>
     </> 
 

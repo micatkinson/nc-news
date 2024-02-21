@@ -270,6 +270,12 @@ img{
   background-color: rgb(239, 231, 231);
 }
 
+.profile-link{
+  color: inherit;
+  font-weight: 1000;
+}
+
+
 .profile img{
   max-height: 160px;
   max-width: 200px;
