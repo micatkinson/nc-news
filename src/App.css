@@ -161,6 +161,15 @@ img{
   max-width: 95%;
 }
 
+.commentItem ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
 .individual-container{
   display: flex;
   justify-content: center;
@@ -190,6 +199,8 @@ img{
 .individualArticle li{
   display: flex;
   justify-content: center;
+  list-style-type: none;
+  align-items: center;
 }
 
 @media screen and (max-width: 700px){
@@ -219,11 +230,6 @@ img{
     width: 300px;
     height: 270px
   }
-}
-
-.individualArticle li{
-  list-style-type: none;
-  align-items: center;
 }
 
 .articleBody{

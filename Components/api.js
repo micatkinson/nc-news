@@ -62,3 +62,9 @@ export const getTopic = (topic) => {
     })
 }
 
+export const patchCommentVotes = (comment_id, newVote) => {
+    const data = { inc_votes: newVote }
+    return ncNews.patch(`comments/${comment_id}`, data).then(({ data }) => {
+        return data.comment
+    })
+}

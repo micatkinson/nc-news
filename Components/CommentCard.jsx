@@ -3,6 +3,8 @@ import UserContext from "./UserContext"
 import { useContext, useState } from "react"
 import { deleteComment } from "./api";
 import Error from './Error';
+import { calculateHoursSince } from '../utils/utils';
+import CommentVote from './CommentVote';
 
 
 export default function CommentCard({comment, index, setCommentCount}){
@@ -10,6 +12,7 @@ export default function CommentCard({comment, index, setCommentCount}){
     const { username } = loggedInUser;
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
+    const [votes, setVotes] = useState(comment.votes)
 
     const handleClick = (e) => {
             e.preventDefault()
@@ -29,15 +32,18 @@ export default function CommentCard({comment, index, setCommentCount}){
     if(error) return <Error error={error}/>
 
     return (
-    <Stack gap={3} key={[comment.id, index]} className='commentStack'>
-        <div key={[comment.id, 'div']}className="commentItem">
-            <h5>{comment.author}</h5>
+    <Stack gap={3} key={[comment.comment_id, index]} className='commentStack'>
+        <div className="commentItem">
             <p>{comment.body}</p>
             <ul>
-            <li>{new Date(comment.created_at).toLocaleDateString()} || {new Date(comment.created_at).toLocaleTimeString()} </li>
-            <li>Votes: {comment.votes}</li>
+            <li> 
+                {comment.author} || {calculateHoursSince(comment.created_at)}
+            </li> 
             <li>
-            {username === comment.author ? <button className='deleteButton' onClick={handleClick}> Delete </button> : null}
+                <CommentVote votes={votes} setVotes={setVotes} id={comment.comment_id}/>
+            </li>
+            <li>
+                {username === comment.author ? <button className='deleteButton' onClick={handleClick}> Delete </button> : null}
             </li>
             </ul>
         </div>

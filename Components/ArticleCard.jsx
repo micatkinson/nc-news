@@ -10,7 +10,7 @@ export default function ArticleCard({article}){
     const [votes, setVotes] = useState(selected.votes)
 
             return(
-            <div className='individualArticle'>
+            <main className='individualArticle'>
                 <h1>{selected.title}</h1>
                 <Link to={`/topic/${selected.topic}`}>{selected.topic}</Link>
                     <p className="articleBody">{selected.body} </p>
@@ -25,6 +25,6 @@ export default function ArticleCard({article}){
                         <ArticleVote votes={votes} setVotes={setVotes} id={id}/>
                     </li>
                 </ul>
-            </div>
+            </main>
               )
 }
