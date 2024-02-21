@@ -15,7 +15,6 @@ export default function Home({articles, setArticles}){
     const [error, setError] = useState(null)
     const [order, setOrder] = useState('asc')
     const [selectedValue, setSelectedValue] = useState('created_at')
-
     const [searchParams, setSearchParams] = useSearchParams()
     
     const setSortOrder = (selectedValue) => {
@@ -39,7 +38,7 @@ export default function Home({articles, setArticles}){
 
     return (
         <main className='homeMain'>
-            <h2>Articles</h2>
+            <h1 className='title'>Articles</h1>
             <Sort selectedValue={selectedValue} setSelectedValue={setSelectedValue} order={order} setOrder={setOrder} isLoading={isLoading} setSortOrder={setSortOrder}/>
             <ArticleList articles={articles} setArticles={setArticles}/>
         </main>

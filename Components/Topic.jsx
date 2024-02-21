@@ -25,7 +25,7 @@ export default function Topic(){
 
         return(
             <main className='homeMain'>
-                <h1 className='articlesTitle'>{topic.charAt(0).toUpperCase() + topic.slice(1)} Articles</h1>
+                <h1 className='title'>{topic.charAt(0).toUpperCase() + topic.slice(1)} Articles</h1>
                 <ArticleList articles={filteredTopic}/>
             </main>
         )

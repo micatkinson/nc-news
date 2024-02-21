@@ -13,17 +13,16 @@ export default function Sort({selectedValue, setSelectedValue, order, setOrder, 
         } 
 
     return (
-        <>
+        <div className='sort'>
         <label htmlFor="sorter">Sort by</label>
         <select id="sorter" onChange={handleSortChange}>
             <option value="created_at"> Date</option>
-            {/* <option value="comment_count"> Comment</option> */}
             <option value="votes">Votes</option>
         </select>
         <button disabled={isLoading} onClick={() => setOrder(switchSortOrder(order))}>
         {order === 'asc' ? 'Desc' : 'Asc'
          }
         </button>
-        </>
+        </div>
     )
 }
