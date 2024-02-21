@@ -194,7 +194,7 @@ img{
 
 @media screen and (max-width: 700px){
   .individualArticle{
-    width: 90%;
+    width: 85%;
     margin-left: 1%;
     margin-right: 1%;
     display: flex;
@@ -203,6 +203,14 @@ img{
     flex-direction: column;
     font-size: 0.9rem;
     border-radius: 50px;
+  }
+  .articleItem{
+    max-width: 23em;
+    padding: 5px
+  }
+  img{
+    height:240px;
+    width:300px;
   }
 }
 
