@@ -34,10 +34,11 @@ export default function ArticleVote({votes, setVotes, id}){
 
     return (
         <>
-        <h3> Vote for Article</h3>
-        <p className='voteCounter'>{votes}</p>
-        <button onClick={handleUpvote}> Upvote 👍</button>
-        <button onClick={handleDownvote}> Downvote 👎 </button>
+        <section className='voting'>
+            <button onClick={handleUpvote}> 👍</button>
+             <p className='voteCounter'>{votes}</p>
+            <button onClick={handleDownvote}> 👎 </button>
+        </section>
         </>
     )
 }

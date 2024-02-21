@@ -1,5 +1,6 @@
 import Stack from 'react-bootstrap/Stack';
-import { Link, Navigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import { calculateHoursSince } from '../utils/utils';
 
 
 export default function ArticleList({articles}){
@@ -12,21 +13,16 @@ export default function ArticleList({articles}){
                             <div className="articleItem" key={['div', index]}>
                                 <li>
                                     <h3>{article.title}</h3>
-                                </li>
-                                <li className='topic'>
-                                    {article.topic}
+                                    <h4>{article.topic}</h4>
                                 </li>
                                 <li>
                                      <img src={article.article_img_url} alt={`${article.title} picture`}></img>
                                 </li>
                                 <li>
-                                     author: {article.author}
+                                    {article.author} | |  {calculateHoursSince(article.created_at)}
                                 </li>
                                 <li>
-                                     {new Date(article.created_at).toLocaleDateString()} {new Date(article.created_at).toLocaleTimeString()}
-                                </li>
-                                <li>
-                                    votes: {article.votes}
+                                    Votes: {article.votes}
                                 </li>
                             </div>
                     </Link>

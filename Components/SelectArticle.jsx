@@ -29,10 +29,12 @@ export default function SelectArticle({article}){
   if (error) return <Error error={error}/>
 
     return (
-        <>
-        <ArticleCard article={selectedArticle}/>
-        <CommentList article={selectedArticle}/>
-        </>
+        <main>
+            <div className='individual-container'>
+                <ArticleCard article={selectedArticle}/>
+            </div>
+                <CommentList article={selectedArticle}/>
+        </main>
     )
 
 }

@@ -28,8 +28,8 @@ export default function TopicList(){
                 <ul>
                     {topics.map((topic) => {
                         return(
-                        <Link to={`/topic/${topic.slug}`} key={topic.slug} className='topicLink'> 
-                        <section class='topicItem'>
+                        <Link to={`/topic/${topic.slug}`} key={topic.slug} className='link'> 
+                        <section className='topicItem'>
                         <li>  
                             <h2>{topic.slug}</h2>
                         </li>  

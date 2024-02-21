@@ -11,19 +11,20 @@ export default function Nav(){
             <h1 className="logo"> /\ NC News</h1>
             <ul>
                 <li> 
-                    <Link to="/">Home </Link>
+                    <Link to="/" className='nav-link'>Home </Link>
                 </li>
                 <li> 
-                     <Link to="/topics">Topics </Link>
+                     <Link to="/topics" className='nav-link'>Topics </Link>
                 </li>
                 <li> 
-                     <Link to="/about">About </Link>
-                </li>
-                <li> 
-                    <Link to="/profile">User: {loggedInUser.username} </Link>
+                    <Link to="/profile" className='nav-link'> 
+                    User: {loggedInUser.username}
+                    <br />
                     <img src={loggedInUser.avatar_url}
                     alt={`avatar for user ${loggedInUser.username}`}
                     />
+                    </Link>
+        
                 </li>
                
             </ul>
