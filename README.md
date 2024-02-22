@@ -20,6 +20,8 @@ Next, clone the repository, and install the dependencies; In your terminal, run 
 git clone https://github.com/micatkinson/nc-news  
 cd nc-news  
 npm install   
-npm run dev    
+npm run dev 
+
+This will host the local application for you to explore.
 
 
