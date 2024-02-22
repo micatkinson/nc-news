@@ -1,8 +1,12 @@
-# React + Vite
+The hosted version is avaliable here: https://miatkinson-nc-news.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project involves building React application that serves as a front end for a news website. 
+The application will bea social news aggregation, web content rating and discussion website.
+Users are able to select their profile, explore various articles, vote on articles and read and leave comments.
 
-Currently, two official plugins are available:
+The backend repo can be found here: https://github.com/micatkinson/nc_news
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run this program locally, you will require: Node.js: ">=21.2.0"
+
+
+
