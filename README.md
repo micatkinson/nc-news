@@ -1,3 +1,4 @@
+<pre>
 Michael's NC News Application
 
 The hosted version is available here: https://miatkinson-nc-news.netlify.app/
@@ -22,5 +23,5 @@ In your terminal, run the following: git clone https://github.com/micatkinson/nc
                                      npm install
                                      npm run dev 
 
-
+<pre>
 
