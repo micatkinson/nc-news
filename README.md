@@ -17,9 +17,10 @@ To run this program locally, you will require: Node.js: >=21.2.0
 
 Next, clone the repository, and install the dependencies:
 
-In your terminal, run the following: git clone https://github.com/micatkinson/nc-news   
-                                     cd nc-news   
-                                     npm install   
-                                     npm run dev    
+In your terminal, run the following:    
+git clone https://github.com/micatkinson/nc-news  
+cd nc-news  
+npm install   
+npm run dev    
 
 
