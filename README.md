@@ -1,4 +1,4 @@
-Michael's NC News Application
+# Heading1 Michael's NC News Application
 
 The hosted version is available here: https://miatkinson-nc-news.netlify.app/
 
