@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import UserContext from "./UserContext"
 import { useContext } from "react"
+import northcodersLogo from '../assets/northcoders-img.png'
 
 export default function Nav(){
     const { loggedInUser } = useContext(UserContext)
@@ -8,7 +9,7 @@ export default function Nav(){
     return (
         <>
         <nav className='navBar'>
-            <h1 className="logo"> <img src="../src/assets/northcoders-img.png" alt='Northcoders logo'></img> NC News</h1>
+            <h1 className="logo"> <img src={northcodersLogo} alt='Northcoders logo'></img> NC News</h1>
             <ul>
                 <li className="links"> 
                     <Link to="/" className='nav-link'>Home </Link>
