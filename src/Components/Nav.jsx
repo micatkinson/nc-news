@@ -8,7 +8,7 @@ export default function Nav(){
     return (
         <>
         <nav className='navBar'>
-            <h1 className="logo"> <img src="../dist/assets/northcoders-img.png"></img> NC News</h1>
+            <h1 className="logo"> <img src="../src/assets/northcoders-img.png" alt='Northcoders logo'></img> NC News</h1>
             <ul>
                 <li className="links"> 
                     <Link to="/" className='nav-link'>Home </Link>

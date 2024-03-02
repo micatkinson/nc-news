@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import Nav from '../Components/Nav'
-import Home from '../Components/Home'
+import Nav from './Components/Nav'
+import Home from './Components/Home'
 import './App.css'
-import SelectArticle from '../Components/SelectArticle'
+import SelectArticle from './Components/SelectArticle'
 import { useState, useEffect } from "react"
-import { getArticles } from "../Components/api"
-import UserContext from '../Components/UserContext';
-import Profile from '../Components/Profile';
-import ChangeUser from '../Components/ChangeUser' 
-import TopicList from '../Components/TopicsList';
-import Topic from '../Components/Topic';
+import { getArticles } from "./Components/api"
+import UserContext from './Components/UserContext';
+import Profile from './Components/Profile';
+import ChangeUser from './Components/ChangeUser' 
+import TopicList from './Components/TopicsList';
+import Topic from './Components/Topic';
 
 function App() {
 

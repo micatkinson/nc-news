@@ -3,7 +3,7 @@ import UserContext from "./UserContext"
 import { useContext, useState } from "react"
 import { deleteComment } from "./api";
 import Error from './Error';
-import { calculateHoursSince } from '../utils/utils';
+import { calculateHoursSince } from '../utils/utils'
 import CommentVote from './CommentVote';
 
 

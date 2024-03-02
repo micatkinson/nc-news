@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ArticleVote from "./ArticleVote"
 import { Link } from "react-router-dom"
-import { calculateHoursSince } from "../utils/utils"
+import { calculateHoursSince } from '../utils/utils'
 
 export default function ArticleCard({article}){
     const selected = article[0]
