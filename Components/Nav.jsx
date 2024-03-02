@@ -4,7 +4,6 @@ import { useContext } from "react"
 
 export default function Nav(){
     const { loggedInUser } = useContext(UserContext)
-
     return (
         <>
         <nav className='navBar'>
